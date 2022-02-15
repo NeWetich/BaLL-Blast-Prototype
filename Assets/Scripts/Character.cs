@@ -16,7 +16,7 @@ public class Character : MonoBehaviour
 	float screenBounds;
 	float velocityX;
 
-	public void Start()
+	void Start()
 	{
 		cam = Camera.main;
 
@@ -28,7 +28,7 @@ public class Character : MonoBehaviour
         screenBounds = Game.Instance.screenWidth - 0.56f;
 	}
 
-	public void Update()
+	void Update()
 	{
 
 		isMoving = Input.GetMouseButton(0);
@@ -39,7 +39,7 @@ public class Character : MonoBehaviour
 		}
 	}
 
-    public void FixedUpdate()
+    void FixedUpdate()
     {
 
         if (isMoving)
@@ -65,7 +65,7 @@ public class Character : MonoBehaviour
         }
     }
 
-    public void MotorActivate(bool isActive)
+    void MotorActivate(bool isActive)
     {
         wheels[0].useMotor = isActive;
         wheels[1].useMotor = isActive;
