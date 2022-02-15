@@ -5,8 +5,8 @@ public class Bullet : MonoBehaviour
 {
 	Queue<GameObject> bulletQueue;
 
-	[SerializeField] GameObject bulletPrefab;
-	[SerializeField] int bulletCount;
+    [SerializeField] GameObject bulletPrefab;
+    [SerializeField] int bulletCount;
 
 	[Space]
 	[SerializeField] float delay = 0f;
@@ -55,15 +55,16 @@ public class Bullet : MonoBehaviour
 
 	public GameObject SpawnBullet(Vector2 position)
 	{
-		if (bulletQueue.Count > 0)
-		{
-			g = bulletQueue.Dequeue();
-			g.transform.position = position;
-			g.SetActive(true);
-			return g;
-		}
 
-		return null;
+		if (Input.GetMouseButton(0))
+        {
+            g = bulletQueue.Dequeue();
+            g.transform.position = position;
+            g.SetActive(true);
+            return g;
+        }
+
+        return null;
 	}
 	public void DestroyBullet(GameObject bullet)
 	{
