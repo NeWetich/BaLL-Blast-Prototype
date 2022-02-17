@@ -34,7 +34,6 @@ public class BallSpawner : MonoBehaviour
 			yield return new WaitForSeconds(spawnDelay);
 		}
 	}
-
 	void PrepareBalls()
 	{
 		balls = new GameObject[ballsCount];

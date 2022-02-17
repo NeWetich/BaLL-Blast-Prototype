@@ -16,6 +16,8 @@ public class Ball : MonoBehaviour
 
 	protected bool isShowing;
 
+	[SerializeField] GameObject coinPrefab;
+
 	void Start()
 	{
 		UpdateHealthUI();
@@ -99,7 +101,8 @@ public class Ball : MonoBehaviour
 	virtual protected void Die()
 	{
 		Destroy(gameObject);
-	}
+		Instantiate(coinPrefab, transform.position, transform.rotation);
+    }
 
 	protected void UpdateHealthUI()
 	{

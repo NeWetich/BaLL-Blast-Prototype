@@ -101,7 +101,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 15
+  m_text: 1
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -306,9 +306,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.0362978, y: 0}
   serializedVersion: 2
-  m_Radius: 0.45
+  m_Radius: 1.8111677
 --- !u!114 &456879170870599662
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -326,3 +326,4 @@ MonoBehaviour:
   textHealth: {fileID: 456879169426264025}
   jumpForce: 11
   isResultOfFission: 1
+  coinPrefab: {fileID: 1222344572119967410, guid: b06b78b1863a4bf42bbd7561ccc038cf, type: 3}

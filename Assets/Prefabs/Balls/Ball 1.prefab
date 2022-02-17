@@ -306,9 +306,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.013128599, y: 0}
   serializedVersion: 2
-  m_Radius: 0.45
+  m_Radius: 1.762833
 --- !u!114 &456879170870599662
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -326,3 +326,4 @@ MonoBehaviour:
   textHealth: {fileID: 456879169426264025}
   jumpForce: 9
   isResultOfFission: 1
+  coinPrefab: {fileID: 1222344572119967410, guid: b06b78b1863a4bf42bbd7561ccc038cf, type: 3}
