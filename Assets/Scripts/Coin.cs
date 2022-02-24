@@ -4,14 +4,13 @@ using UnityEngine;
 
 public class Coin : MonoBehaviour
 {
-    [SerializeField] protected Rigidbody2D rb;
+    [SerializeField] private Rigidbody2D rb;
 
-	protected float[] leftAndRight = new float[2] { -1f, 1f };
+	private float[] leftAndRight = new float[2] { -1f, 1f };
 
-	[HideInInspector] public bool isResultOfFission = true;
+	[HideInInspector] private bool isResultOfFission = true;
 
-	protected bool isShowing;
-
+	private bool isShowing;
 
 	void Start()
 	{
@@ -65,7 +64,6 @@ public class Coin : MonoBehaviour
 
 		if (other.tag.Equals("floor"))
 		{
-
 			rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y);
 			rb.AddTorque(-rb.angularVelocity * 4f);
 		}

@@ -4,11 +4,11 @@ using TMPro;
 
 public class Ball : MonoBehaviour
 {
-	[SerializeField] protected Rigidbody2D rb;
-	[SerializeField] protected int health;
+	[SerializeField] private Rigidbody2D rb;
+	[SerializeField] private int health;
 
-    [SerializeField] protected TMP_Text textHealth;
-    [SerializeField] protected float jumpForce;
+    [SerializeField] private TMP_Text textHealth;
+    [SerializeField] private float jumpForce;
 
 	protected float[] leftAndRight = new float[2] { -1f, 1f };
 
@@ -58,8 +58,7 @@ public class Ball : MonoBehaviour
 		if (other.tag.Equals("bullet"))
 		{
 			TakeDamage(1);
-			Bullet.Instance.DestroyBullet(other.gameObject);
-
+            Bullet.DestroyBullet(other.gameObject);
 		}
 
 		if (!isShowing && other.tag.Equals("wall"))
@@ -91,7 +90,7 @@ public class Ball : MonoBehaviour
 		{
 			health -= damage;
 		}
-		else
+		else if (health >= 0)
 		{
 			Die();
 		}

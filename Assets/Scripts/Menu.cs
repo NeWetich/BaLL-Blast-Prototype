@@ -6,16 +6,6 @@ using UnityEngine.UI;
 
 public class Menu : MonoBehaviour
 {
-    public void PressPlay()
-    {
-        SceneManager.LoadScene("Level");
-    }
-
-    //GameObject obj;
-    //public void Start()
-    //{
-    //    obj = GameObject.Find("buttonsSettings");
-    //}
     public void  ShowSettings()
     {
         //obj.SetActive(true);

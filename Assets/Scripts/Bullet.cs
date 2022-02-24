@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-	Queue<GameObject> bulletQueue;
+	static Queue<GameObject> bulletQueue;
 
     [SerializeField] GameObject bulletPrefab;
     [SerializeField] int bulletCount;
@@ -66,7 +66,7 @@ public class Bullet : MonoBehaviour
 
         return null;
 	}
-	public void DestroyBullet(GameObject bullet)
+	public static void DestroyBullet(GameObject bullet)
 	{
 		bulletQueue.Enqueue(bullet);
 		bullet.SetActive(false);
@@ -74,9 +74,10 @@ public class Bullet : MonoBehaviour
 
 	void OnTriggerEnter2D(Collider2D other)
 	{
-		if (other.tag.Equals("Bullet"))
+		if (other.tag.Equals("bullet"))
 		{
 			DestroyBullet(other.gameObject);
 		}
 	}
+
 }

@@ -21,4 +21,5 @@ public class BallFissionable : Ball
             g.GetComponent<Rigidbody2D>().velocity = new Vector2(leftAndRight[i], 5f);
         }
     }
+
 }
