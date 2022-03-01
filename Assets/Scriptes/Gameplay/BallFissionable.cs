@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class BallFissionable : Ball
 {
-    [SerializeField] GameObject[] splitsPrefabs;
+    [SerializeField] public GameObject[] splitsPrefabs;
 
     override protected void Die()
     {

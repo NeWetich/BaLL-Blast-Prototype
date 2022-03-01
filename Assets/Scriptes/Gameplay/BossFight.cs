@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class BossFight : MonoBehaviour
 {
-    [SerializeField] private Rigidbody2D rb;
-    [SerializeField] private int health;
+    [SerializeField] public Rigidbody2D rb;
+    [SerializeField] public int health;
 
 
     void Start()

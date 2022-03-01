@@ -4,11 +4,11 @@ using TMPro;
 
 public class Ball : MonoBehaviour
 {
-	[SerializeField] private Rigidbody2D rb;
-	[SerializeField] private int health;
+	[SerializeField] public Rigidbody2D rb;
+	[SerializeField] public int health;
 
-    [SerializeField] private TMP_Text textHealth;
-    [SerializeField] private float jumpForce;
+    [SerializeField] public TMP_Text textHealth;
+    [SerializeField] public float jumpForce;
 
 	protected float[] leftAndRight = new float[2] { -1f, 1f };
 
@@ -16,7 +16,7 @@ public class Ball : MonoBehaviour
 
 	protected bool isShowing;
 
-	[SerializeField] GameObject coinPrefab;
+	[SerializeField] public GameObject coinPrefab;
 
 	void Start()
 	{
