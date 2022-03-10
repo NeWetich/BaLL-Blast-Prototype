@@ -5,14 +5,6 @@ using UnityEngine;
 
 public class BossFight : MonoBehaviour
 {
-    public class Random
-    {
-        internal int Next(int v1, int v2)
-        {
-            throw new System.NotImplementedException();
-        }
-    }
-
     [SerializeField] public Rigidbody2D rb;
     [SerializeField] public int health;
 
@@ -28,7 +20,7 @@ public class BossFight : MonoBehaviour
     void FixedUpdate()
     {
         transform.Translate(direction.normalized * speed);
-        if (transform)// transform.position == , transform.rotation ==
+        if (transform.position.y < 1 && transform.position.x < 1)
         {
 
         }
@@ -36,8 +28,7 @@ public class BossFight : MonoBehaviour
 
     public void BossBevaivor()
     {
-        Random bevaivor = new Random();
-        bossBevaivor = bevaivor.Next(1, 3);
+        bossBevaivor = Random.Range(1, 5);
         if (bossBevaivor == 1)
         {
 
@@ -47,6 +38,10 @@ public class BossFight : MonoBehaviour
 
         }
         else if (bossBevaivor == 3)
+        {
+
+        }
+        else if (bossBevaivor == 4)
         {
 
         }
