@@ -5,46 +5,29 @@ using UnityEngine;
 public class FollowBoss : MonoBehaviour
 {
 
-    public enum MovementType
-    {
-        Moveing,
-        Lerping
-    }
-
-    public MovementType Type = MovementType.Moveing;
     public BossFly MyPath;
-    public float speed = 1;
-    public float maxDistance = .1f;
+    [HideInInspector] public float speed = 1;
+    [HideInInspector] public float maxDistance = .1f;
 
-    private IEnumerator<Transform> pointInPath;
+    private Transform pointInPath;
 
     void Start()
     {
-        pointInPath = MyPath.GetNextPathPoint();
+        pointInPath = MyPath.GetNext();
 
-        pointInPath.MoveNext();
-
-        transform.position = pointInPath.Current.position;
+        transform.position = pointInPath.position;
     }
 
     void Update()
     {
-        if (Type == MovementType.Moveing)
-        {
-            transform.position = Vector2.MoveTowards(transform.position, pointInPath.Current.position, Time.deltaTime * speed);
-        }
+        transform.position = Vector2.Lerp(transform.position, pointInPath.position, Time.deltaTime * speed);
 
-        else if (Type == MovementType.Lerping)
-        {
-            transform.position = Vector2.Lerp(transform.position, pointInPath.Current.position, Time.deltaTime * speed);
-        }
+        var distanceSquare = Vector3.Distance(transform.position, pointInPath.position);
 
-        var distanceSquare = (transform.position = pointInPath.Current.position).sqrMagnitude;
-        if(distanceSquare < maxDistance * maxDistance)
+        if(distanceSquare < maxDistance)
         {
-            pointInPath.MoveNext();
+            pointInPath = MyPath.GetNext();
         }
     }
-
 
 }

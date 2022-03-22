@@ -10,7 +10,7 @@ public class BossBallInfinite : MonoBehaviour
 
 	GameObject[] balls;
 
-	#region Singleton class: BallSpawner
+	#region Singleton class: BossBallInfinite
 
 	public static BossBallInfinite Instance;
 
@@ -37,7 +37,7 @@ public class BossBallInfinite : MonoBehaviour
 	}
 	void PrepareBalls()
 	{
-		
+
 	}
 
 }

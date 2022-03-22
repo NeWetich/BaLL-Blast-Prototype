@@ -1,8 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
 
-//2 триггера - сохранение и загрузка. 
-
 public class SaveLoad : MonoBehaviour
 {
     void OnApplicationQuit()
@@ -25,6 +23,7 @@ public class SaveData
     public List<Achievement> achievavements = new List<Achievement>();
     public List<CharacterParameters> characterParameters = new List<CharacterParameters>();
     public MenuSettings menuSettings;
+    public Resources resources;
 
     public int gameLevel = 1;
     public float bestResult = 0;
@@ -47,5 +46,11 @@ public class Achievement
 {
     public string Name;
     public bool status = false;
+}
+
+public class Resources
+{
+    public int money;
+    public int crystal;
 }
 

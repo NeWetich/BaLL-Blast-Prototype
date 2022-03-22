@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class BossBall : MonoBehaviour
 {
-    //public static bool start = true;
-    //public static bool notstart = false;
+    //public static bool ballstart = false;
 
 
     void Start()

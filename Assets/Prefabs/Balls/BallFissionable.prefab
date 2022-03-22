@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 2952878928390790968}
   - component: {fileID: 2952878928390790974}
   - component: {fileID: 2952878928390790969}
-  - component: {fileID: -4554358606976417491}
   m_Layer: 0
   m_Name: BallFissionable
   m_TagString: Untagged
@@ -125,27 +124,6 @@ CircleCollider2D:
   m_Offset: {x: -0.041338205, y: 0}
   serializedVersion: 2
   m_Radius: 1.731477
---- !u!114 &-4554358606976417491
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2952878928390790970}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 821ba73288267224ebe01785c11ddad3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rb: {fileID: 2952878928390790974}
-  health: 15
-  textHealth: {fileID: 456879169426264025, guid: 23d0e70821436c74dadae1cb15fd499b, type: 3}
-  jumpForce: 9
-  isResultOfFission: 1
-  coinPrefab: {fileID: 0}
-  splitsPrefabs:
-  - {fileID: 456879170870599659, guid: 23d0e70821436c74dadae1cb15fd499b, type: 3}
-  - {fileID: 456879170870599659, guid: 23d0e70821436c74dadae1cb15fd499b, type: 3}
 --- !u!1 &2952878930355408645
 GameObject:
   m_ObjectHideFlags: 0

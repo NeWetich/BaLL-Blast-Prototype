@@ -18,6 +18,9 @@ public class Ball : MonoBehaviour
 
 	[SerializeField] public GameObject coinPrefab;
 
+	private int score;
+
+
 	void Start()
 	{
 		UpdateHealthUI();
@@ -101,6 +104,7 @@ public class Ball : MonoBehaviour
 	{
 		Destroy(gameObject);
 		Instantiate(coinPrefab, transform.position, transform.rotation);
+
     }
 
 	protected void UpdateHealthUI()
