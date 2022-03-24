@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 public class BossFight : MonoBehaviour
@@ -26,6 +27,20 @@ public class BossFight : MonoBehaviour
         }
     }
 
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag.Equals("character"))
+        {
+            Debug.Log("gameover");
+        }
+
+        if (other.tag.Equals("bullet"))
+        {
+            TakeDamage(1);
+            Bullet.DestroyBullet(other.gameObject);
+        }
+    }
+
     public void BossBevaivor()
     {
         bossBevaivor = Random.Range(1, 5);
@@ -45,6 +60,13 @@ public class BossFight : MonoBehaviour
         {
 
         }
+
+    }
+
+    public Scrollbar.ScrollEvent size;
+    public void LevelBarChanged()
+    {
+       
     }
 
     public void TakeDamage(int damage)

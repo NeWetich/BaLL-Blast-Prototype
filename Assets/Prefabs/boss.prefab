@@ -10,8 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2979528091688476107}
   - component: {fileID: 7191525509665812566}
-  - component: {fileID: -4087422039630077165}
+  - component: {fileID: 4453610729469958259}
   - component: {fileID: 9000914265198205510}
+  - component: {fileID: 8554180412861974780}
   m_Layer: 0
   m_Name: boss
   m_TagString: Untagged
@@ -28,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 1028591564814156500}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.3, y: 2.36, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -86,8 +87,8 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &-4087422039630077165
-BoxCollider2D:
+--- !u!58 &4453610729469958259
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -99,19 +100,9 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.031042248, y: 0.03449154}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.65, y: 1.86}
-    newSize: {x: 1.65, y: 1.86}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
+  m_Offset: {x: 0.02758789, y: 0.044799805}
   serializedVersion: 2
-  m_Size: {x: 1.2705953, y: 1.3633249}
-  m_EdgeRadius: 0
+  m_Radius: 0.836792
 --- !u!50 &9000914265198205510
 Rigidbody2D:
   serializedVersion: 4
@@ -133,3 +124,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &8554180412861974780
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1028591564814156500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a8efd77019fed644bbe79a54e8883a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 9000914265198205510}
+  health: 1000
+  bossBevaivor: 0
+  direction: {x: 0, y: 0}
+  speed: 0.01

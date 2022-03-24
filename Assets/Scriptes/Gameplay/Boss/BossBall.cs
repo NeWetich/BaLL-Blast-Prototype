@@ -6,15 +6,10 @@ public class BossBall : MonoBehaviour
 {
     //public static bool ballstart = false;
 
-
-    void Start()
+    int ballSpawner = 0;
+    public void BallSpawner()
     {
-        
+        ballSpawner = Random.Range(0, 3);
     }
 
-
-    void Update()
-    {
-        
-    }
 }
