@@ -10,12 +10,11 @@ public class Path
 
 public class BossFly : MonoBehaviour
 {
-    //public static bool flystart = false;
 
     public List<Path> paths;
 
     int currentIndex = 0;
-    int currentPath = 0;
+    public int currentPath = 0;
 
     public Transform GetNext()
     {
@@ -26,8 +25,5 @@ public class BossFly : MonoBehaviour
         return paths[currentPath].PathElements[currentIndex];
 
     }
-    public void Paths()
-    {
-        currentPath = Random.Range(0, paths.Count);
-    }
+
 }

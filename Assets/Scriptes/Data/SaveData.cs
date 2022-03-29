@@ -15,7 +15,6 @@ public class SaveLoad : MonoBehaviour
     }
 }
 
-
 public class SaveData
 {
     public static SaveData link;
@@ -25,7 +24,7 @@ public class SaveData
     public MenuSettings menuSettings;
     public Resources resources;
 
-    public int gameLevel = 1;
+    public int currentLevel = 1;
     public float bestResult = 0;
 }
 

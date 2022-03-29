@@ -4,8 +4,8 @@ using UnityEngine;
 public class BallSpawner : MonoBehaviour
 {
 	[SerializeField] GameObject[] ballPrefabs;
-	[SerializeField] int ballsCount;
-	[SerializeField] float spawnDelay;
+	[HideInInspector] public int ballsCount = 20;
+	[HideInInspector] float spawnDelay = 4;
 
 	GameObject[] balls;
 
@@ -20,8 +20,8 @@ public class BallSpawner : MonoBehaviour
 
 	#endregion
 
-	void Start()
-	{
+	public void BallSpawnerStart()
+    {
 		PrepareBalls();
 		StartCoroutine(SpawnBalls());
 	}
@@ -45,6 +45,5 @@ public class BallSpawner : MonoBehaviour
 			balls[i].SetActive(false);
 		}
 	}
-
 
 }
