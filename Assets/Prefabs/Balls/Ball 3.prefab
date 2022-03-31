@@ -12,8 +12,9 @@ GameObject:
   - component: {fileID: 2952878928390790968}
   - component: {fileID: 2952878928390790974}
   - component: {fileID: 2952878928390790969}
+  - component: {fileID: 8968035008220342274}
   m_Layer: 0
-  m_Name: BallFissionable
+  m_Name: Ball 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 2952878928390790970}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -5.5816665, y: 2.0300333, z: 0.028427385}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2952878930355408650}
@@ -77,7 +78,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 4
   m_Sprite: {fileID: 21300000, guid: ff5dfd526d96a434ab7d7a31b49b91b4, type: 3}
-  m_Color: {r: 0.6278157, g: 0, b: 1, a: 1}
+  m_Color: {r: 0.8301887, g: 0.15194014, b: 0.69029915, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -124,6 +125,29 @@ CircleCollider2D:
   m_Offset: {x: -0.041338205, y: 0}
   serializedVersion: 2
   m_Radius: 1.731477
+--- !u!114 &8968035008220342274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2952878928390790970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9dae11f676c22342a1b7a5f193a75f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameOver: {fileID: 0}
+  levelComplete: {fileID: 0}
+  resource: {fileID: 0}
+  rb: {fileID: 2952878928390790974}
+  health: 0
+  textHealth: {fileID: 2952878930355408648}
+  textScore: {fileID: 0}
+  isResultOfFission: 1
+  splitsPrefabs:
+  - {fileID: 2952878928390790970, guid: 7367e2ccd7f73fd43a8ab8f879f1da21, type: 3}
+  - {fileID: 2952878928390790970, guid: 7367e2ccd7f73fd43a8ab8f879f1da21, type: 3}
 --- !u!1 &2952878930355408645
 GameObject:
   m_ObjectHideFlags: 0

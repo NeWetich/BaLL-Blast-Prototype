@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2952878928390790969}
   - component: {fileID: 8968035008220342274}
   m_Layer: 0
-  m_Name: Ball 2
+  m_Name: Ball 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 2952878928390790970}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -5.5816665, y: 2.0300333, z: 0.028427385}
-  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2952878930355408650}
@@ -78,7 +78,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 4
   m_Sprite: {fileID: 21300000, guid: ff5dfd526d96a434ab7d7a31b49b91b4, type: 3}
-  m_Color: {r: 0.8773585, g: 0.193681, b: 0.53151315, a: 1}
+  m_Color: {r: 0.51135635, g: 0.16504094, b: 0.7169812, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -146,8 +146,8 @@ MonoBehaviour:
   textScore: {fileID: 0}
   isResultOfFission: 1
   splitsPrefabs:
-  - {fileID: 456879170870599659, guid: 23d0e70821436c74dadae1cb15fd499b, type: 3}
-  - {fileID: 456879170870599659, guid: 23d0e70821436c74dadae1cb15fd499b, type: 3}
+  - {fileID: 2952878928390790970, guid: c1db0224b386fb949afeb7fbe7a3fe79, type: 3}
+  - {fileID: 2952878928390790970, guid: c1db0224b386fb949afeb7fbe7a3fe79, type: 3}
 --- !u!1 &2952878930355408645
 GameObject:
   m_ObjectHideFlags: 0

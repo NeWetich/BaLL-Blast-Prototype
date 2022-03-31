@@ -138,6 +138,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 9000914265198205510}
   health: 1000
+  healthMax: 100
+  textScore: {fileID: 0}
+  gameOver: {fileID: 0}
+  levelComplete: {fileID: 0}
+  resource: {fileID: 0}
   bossBevaivor: 0
   direction: {x: 0, y: 0}
   speed: 0.01
+  linkScrollbar: {fileID: 0}
+  linkBossFly: {fileID: 0}

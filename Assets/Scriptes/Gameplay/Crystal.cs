@@ -1,8 +1,8 @@
-using UnityEngine;
+﻿using UnityEngine;
 
-public class Coin : MonoBehaviour
+public class Crystal : MonoBehaviour
 {
-    public Rigidbody2D rb;
+	public Rigidbody2D rb;
 
 	private float[] leftAndRight = new float[2] { -1f, 1f };
 

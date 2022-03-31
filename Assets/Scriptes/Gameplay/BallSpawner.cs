@@ -3,10 +3,13 @@ using UnityEngine;
 
 public class BallSpawner : MonoBehaviour
 {
-	[SerializeField] GameObject[] ballPrefabs;
-	[HideInInspector] public int ballsCount = 20;
+	public int ballsCount = 5;
 	[HideInInspector] float spawnDelay = 4;
+	[HideInInspector] public SaveData saveData;
+	[HideInInspector] public Ball ball;
 
+	[SerializeField] GameObject[] ballPrefabs;
+	
 	GameObject[] balls;
 
 	#region Singleton class: BallSpawner
@@ -20,8 +23,14 @@ public class BallSpawner : MonoBehaviour
 
 	#endregion
 
-	public void BallSpawnerStart()
+	public void HpBall()
+	{
+		ball.health = Random.Range(1, 51) * saveData.currentLevel;
+	}
+
+    public void BallSpawnerStart()
     {
+		//HpBall(); //ссылка
 		PrepareBalls();
 		StartCoroutine(SpawnBalls());
 	}

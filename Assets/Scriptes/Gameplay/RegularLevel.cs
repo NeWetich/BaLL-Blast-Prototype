@@ -5,20 +5,33 @@ using UnityEngine.UI;
 
 public class RegularLevel : MonoBehaviour
 {
-    public SaveData saveData;
-    public BossFight bossFight;
+    [HideInInspector] public SaveData saveData;
+    [HideInInspector] public BossFight bossFight;
     public BallSpawner ballSpawner;
     public Scrollbar linkScrollbar;
-    public int maxBallCount = 20;
+    [HideInInspector] public LevelComplete levelComplete;
+    [HideInInspector] public int maxBallCount = 5;
 
+    public void Start()
+    {
+        ballSpawner.BallSpawnerStart();
+        LevelBarChange();
+        if (ballSpawner.ballsCount == 0) //???
+        {
+            levelComplete.LevelVictory();
+        }
+    }
     public void RegularLevelStart()
     {
         ballSpawner.BallSpawnerStart();
         LevelBarChange();
+        if (ballSpawner.ballsCount == 0)
+        {
+            levelComplete.LevelVictory();
+        }
     }
-
     public void LevelBarChange()
     {
-        linkScrollbar.size = (float)maxBallCount / ballSpawner.ballsCount;
+        linkScrollbar.size = (float)ballSpawner.ballsCount / maxBallCount;
     }
 }

@@ -9,7 +9,7 @@ public class SaveLoad : MonoBehaviour
     }
 
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
-    static void OnBeforeSceneLoadRuntimeMethod()
+    public static void OnBeforeSceneLoadRuntimeMethod()
     {
         SaveController.Load<SaveData>();
     }

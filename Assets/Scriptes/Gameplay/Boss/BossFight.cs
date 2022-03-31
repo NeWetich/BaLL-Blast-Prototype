@@ -7,11 +7,15 @@ using TMPro;
 
 public class BossFight : MonoBehaviour
 {
-    [SerializeField] public Rigidbody2D rb;
-    [SerializeField] public int health; //определенное хп, которое растет с уровнем
-    [SerializeField] public int healthMax; //определенное хп, которое растет с уровнем
-    [SerializeField] public TMP_Text textScore;
-
+    public Rigidbody2D rb;
+    [HideInInspector] public int health = 100;
+    [HideInInspector] public int healthMax = 100;
+    public TMP_Text textScore;
+    [HideInInspector] public GameOver gameOver;
+    [HideInInspector] public LevelComplete levelComplete;
+    [HideInInspector] public Resource resource;
+    [HideInInspector] public SaveData saveData;
+  
     [HideInInspector] public int bossBevaivor;
     [HideInInspector] public Vector2 direction;
     [HideInInspector] public float speed = 0.01f;
@@ -33,12 +37,13 @@ public class BossFight : MonoBehaviour
         {
 
         }
-    }
+    } //сделать
 
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag.Equals("character"))
         {
+            //gameOver.LevelFailed(); //ссылка
             Debug.Log("gameover");
         }
 
@@ -48,7 +53,6 @@ public class BossFight : MonoBehaviour
             Bullet.DestroyBullet(other.gameObject);
         }
     }
-
     public void HpChange()
     {
 
@@ -85,7 +89,8 @@ public class BossFight : MonoBehaviour
         if (health > 1)
         {
             health -= damage;
-            score++;
+            ++score;
+            //score = (saveData.currentLevel * score) * (3 / 2);
         }
         else if (health >= 0)
         {
@@ -97,6 +102,8 @@ public class BossFight : MonoBehaviour
     virtual protected void Die()
     {
         Destroy(gameObject);
+        //resource.TakeResources(); //ссылка
+        levelComplete.LevelVictory();
     }
 
     protected void UpdateScoreUI()

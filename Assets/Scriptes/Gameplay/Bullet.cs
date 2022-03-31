@@ -5,12 +5,12 @@ public class Bullet : MonoBehaviour
 {
 	static Queue<GameObject> bulletQueue;
 
-    [SerializeField] public GameObject bulletPrefab;
-    [SerializeField] public int bulletCount;
+    public GameObject bulletPrefab;
+    public int bulletCount;
 
 	[Space]
-	[SerializeField] public float delay = 0f;
-	[SerializeField] public float speed = 0f;
+	public float delay = 0f;
+	public float speed = 0f;
 
 	GameObject g;
 	float t = 0f;
