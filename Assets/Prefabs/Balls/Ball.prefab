@@ -321,11 +321,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c4b05e689bf88446bd9a368c02b9ee4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameOver: {fileID: 0}
-  levelComplete: {fileID: 0}
   resource: {fileID: 0}
   rb: {fileID: 456879170870599663}
   health: 0
   textHealth: {fileID: 456879169426264025}
   textScore: {fileID: 0}
+  jumpForce: 8
+  gameOver: {fileID: 0}
   isResultOfFission: 1

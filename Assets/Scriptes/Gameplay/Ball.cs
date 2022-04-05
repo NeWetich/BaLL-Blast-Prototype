@@ -4,17 +4,16 @@ using TMPro;
 
 public class Ball : MonoBehaviour
 {
-	[HideInInspector] public SaveData saveData;
-	[HideInInspector] public GameOver gameOver;
-	[HideInInspector] public LevelComplete levelComplete;
+
 	[HideInInspector] public Resource resource;
 
 	[SerializeField] protected Rigidbody2D rb;
-	[HideInInspector] public int health = 10;
+	[HideInInspector] public int health;
 
 	public TMP_Text textHealth;
-	public TMP_Text textScore;
 	public float jumpForce = 8;
+
+	public GameOver gameOver;
 
 	protected float[] leftAndRight = new float[2] { -1f, 1f };
 
@@ -22,12 +21,15 @@ public class Ball : MonoBehaviour
 
 	protected bool isShowing;
 
-	private int score = 0;
-
+	public void HpBall()
+	{
+		health = Random.Range(1, 5)/* * SaveData.link.currentLevel*/;
+	}
 
 
 	void Start()
 	{
+		HpBall();
 		UpdateUI();
 
 		isShowing = true;
@@ -60,8 +62,7 @@ public class Ball : MonoBehaviour
 	{
 		if (other.tag.Equals("character"))
 		{
-			//gameOver.LevelFailed(); //ссылка
-			Debug.Log("gameover");
+            Debug.Log("gameover");
 		}
 
 		if (other.tag.Equals("bullet"))
@@ -97,9 +98,7 @@ public class Ball : MonoBehaviour
 		if (health > 1)
 		{
 			health -= damage;
-			++score;
-			//score = (saveData.currentLevel * score) * (3 / 2);
-		}
+        }
 		else if (health >= 0)
 		{
 			Die();
@@ -109,12 +108,10 @@ public class Ball : MonoBehaviour
 	virtual protected void Die()
 	{
 		Destroy(gameObject);
-        //resource.TakeResources(); //ссылка
     }
 	protected void UpdateUI()
 	{
 		textHealth.text = health.ToString();
-        //textScore.text = score.ToString(); //ссылка
     }
 
 }

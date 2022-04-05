@@ -137,13 +137,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9dae11f676c22342a1b7a5f193a75f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameOver: {fileID: 0}
-  levelComplete: {fileID: 0}
   resource: {fileID: 0}
   rb: {fileID: 2952878928390790974}
   health: 0
   textHealth: {fileID: 2952878930355408648}
   textScore: {fileID: 0}
+  jumpForce: 8
+  gameOver: {fileID: 0}
   isResultOfFission: 1
   splitsPrefabs:
   - {fileID: 2952878928390790970, guid: 7367e2ccd7f73fd43a8ab8f879f1da21, type: 3}

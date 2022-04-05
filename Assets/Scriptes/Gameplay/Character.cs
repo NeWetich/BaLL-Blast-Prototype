@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 
@@ -16,21 +17,20 @@ public class Character : MonoBehaviour
 	float screenBounds;
 	float velocityX;
 
-	void Start()
-	{
-		cam = Camera.main;
+    void Start()
+    {
+        cam = Camera.main;
 
-		rb = GetComponent<Rigidbody2D>();
-		pos = rb.position;
+        rb = GetComponent<Rigidbody2D>();
+        pos = rb.position;
 
         motor = wheels[0].motor;
 
         screenBounds = Game.Instance.screenWidth - 0.56f;
-	}
+    }
 
-	void Update()
+    void Update()
 	{
-
 		isMoving = Input.GetMouseButton(0);
 
 		if (isMoving)
@@ -41,7 +41,6 @@ public class Character : MonoBehaviour
 
     void FixedUpdate()
     {
-
         if (isMoving)
         {
             rb.MovePosition(Vector2.Lerp(rb.position, pos, CannonSpeed * Time.fixedDeltaTime));
@@ -65,7 +64,7 @@ public class Character : MonoBehaviour
         }
     }
 
-    void MotorActivate(bool isActive)
+    public void MotorActivate(bool isActive)
     {
         wheels[0].useMotor = isActive;
         wheels[1].useMotor = isActive;

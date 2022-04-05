@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7191525509665812566}
   - component: {fileID: 4453610729469958259}
   - component: {fileID: 9000914265198205510}
-  - component: {fileID: 8554180412861974780}
+  - component: {fileID: -3543307660324564532}
   m_Layer: 0
   m_Name: boss
   m_TagString: Untagged
@@ -124,7 +124,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &8554180412861974780
+--- !u!114 &-3543307660324564532
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -133,18 +133,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1028591564814156500}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a8efd77019fed644bbe79a54e8883a9, type: 3}
+  m_Script: {fileID: 11500000, guid: 39a3d09a10264cd4a85a5afa586989cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 9000914265198205510}
-  health: 1000
-  healthMax: 100
-  textScore: {fileID: 0}
-  gameOver: {fileID: 0}
-  levelComplete: {fileID: 0}
-  resource: {fileID: 0}
-  bossBevaivor: 0
-  direction: {x: 0, y: 0}
-  speed: 0.01
-  linkScrollbar: {fileID: 0}
-  linkBossFly: {fileID: 0}
+  MyPath: {fileID: 0}
+  speed: 1
+  maxDistance: 0.1

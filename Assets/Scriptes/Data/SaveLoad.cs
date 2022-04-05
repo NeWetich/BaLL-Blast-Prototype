@@ -26,6 +26,12 @@ public class SaveData
 
     public int currentLevel = 1;
     public float bestResult = 0;
+
+    public SaveData()
+    {
+        currentLevel = 1;
+        link = this;
+    }
 }
 
 public class CharacterParameters

@@ -5,12 +5,11 @@ public class BallSpawner : MonoBehaviour
 {
 	public int ballsCount = 5;
 	[HideInInspector] float spawnDelay = 4;
-	[HideInInspector] public SaveData saveData;
-	[HideInInspector] public Ball ball;
 
 	[SerializeField] GameObject[] ballPrefabs;
 	
 	GameObject[] balls;
+
 
 	#region Singleton class: BallSpawner
 
@@ -21,17 +20,12 @@ public class BallSpawner : MonoBehaviour
 		Instance = this;
 	}
 
-	#endregion
+    #endregion
 
-	public void HpBall()
-	{
-		ball.health = Random.Range(1, 51) * saveData.currentLevel;
-	}
 
     public void BallSpawnerStart()
     {
-		//HpBall(); //ссылка
-		PrepareBalls();
+        PrepareBalls();
 		StartCoroutine(SpawnBalls());
 	}
 

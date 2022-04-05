@@ -7,6 +7,9 @@ public class Resource : MonoBehaviour
 	public GameObject coinPrefab;
 	public GameObject crystalPrefab;
 
+	public Coin coin;
+	public Crystal crystal;
+
 	int crystalChange = 2;
 	int change;
 	public void TakeResources()

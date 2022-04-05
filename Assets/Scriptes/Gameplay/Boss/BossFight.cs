@@ -11,14 +11,16 @@ public class BossFight : MonoBehaviour
     [HideInInspector] public int health = 100;
     [HideInInspector] public int healthMax = 100;
     public TMP_Text textScore;
-    [HideInInspector] public GameOver gameOver;
-    [HideInInspector] public LevelComplete levelComplete;
-    [HideInInspector] public Resource resource;
-    [HideInInspector] public SaveData saveData;
+    public GameOver gameOver;
+    public LevelComplete levelComplete;
+    public Resource resource;
+    public BossBall bossBall;
   
     [HideInInspector] public int bossBevaivor;
     [HideInInspector] public Vector2 direction;
     [HideInInspector] public float speed = 0.01f;
+
+    [SerializeField] GameObject bossPrefab;
 
     public Scrollbar linkScrollbar;
     public BossFly linkBossFly;
@@ -27,23 +29,15 @@ public class BossFight : MonoBehaviour
     public void BossLevelStart()
     {
         BossBevaivor();
+        PrepareBoss();
         LevelBarChange();
     }
-
-    void FixedUpdate()
-    {
-        transform.Translate(direction.normalized * speed);
-        if (transform.position.y < 1 && transform.position.x < 1)
-        {
-
-        }
-    } //сделать
 
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag.Equals("character"))
         {
-            //gameOver.LevelFailed(); //ссылка
+            gameOver.LevelFailed();
             Debug.Log("gameover");
         }
 
@@ -53,30 +47,29 @@ public class BossFight : MonoBehaviour
             Bullet.DestroyBullet(other.gameObject);
         }
     }
+
+    void PrepareBoss()
+    {
+        bossPrefab.SetActive(true);
+    }
     public void HpChange()
     {
-
+        health = 500 /** SaveData.link.currentLevel*/;
     }
     public void BossBevaivor()
     {
-        bossBevaivor = Random.Range(1, 5);
+        bossBevaivor = Random.Range(1, 3);
         if (bossBevaivor == 1)
         {
             linkBossFly.currentPath = 0;
+            bossBall.BallSpawnerStart();
+
         }
         else if (bossBevaivor == 2)
         {
             linkBossFly.currentPath = 1;
+            bossBall.BallSpawnerStart();
         }
-        else if (bossBevaivor == 3)
-        {
-            linkBossFly.currentPath = 0;
-        }
-        else if (bossBevaivor == 4)
-        {
-            linkBossFly.currentPath = 1;
-        }
-
     }
 
     public void LevelBarChange()
@@ -90,7 +83,7 @@ public class BossFight : MonoBehaviour
         {
             health -= damage;
             ++score;
-            //score = (saveData.currentLevel * score) * (3 / 2);
+            score = (/*SaveData.link.currentLevel * */score) * (3 / 2);
         }
         else if (health >= 0)
         {
@@ -102,7 +95,7 @@ public class BossFight : MonoBehaviour
     virtual protected void Die()
     {
         Destroy(gameObject);
-        //resource.TakeResources(); //ссылка
+        resource.TakeResources();
         levelComplete.LevelVictory();
     }
 

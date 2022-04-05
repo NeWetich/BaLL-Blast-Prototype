@@ -42,6 +42,7 @@ public class Bullet : MonoBehaviour
 				g.GetComponent<Rigidbody2D>().velocity = Vector2.up * speed;
 		}
 	}
+
 	void PrepareBullet()
 	{
 		bulletQueue = new Queue<GameObject>();

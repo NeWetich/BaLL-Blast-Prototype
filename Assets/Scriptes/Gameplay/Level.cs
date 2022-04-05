@@ -4,31 +4,32 @@ using UnityEngine;
 
 public class Level : MonoBehaviour
 {
-    [HideInInspector] public SaveData saveData;
-    [HideInInspector] public BossFight bossFight;
-    [HideInInspector] public RegularLevel regularLevel;
+    public BossFight bossFight;
+    public RegularLevel regularLevel;
 
     public string linkUiText;
 
     public int currentLevel
     {
-        get { return saveData.currentLevel; }
+        get { return SaveData.link.currentLevel; }
         set 
         {
-            saveData.currentLevel = value;
+            SaveData.link.currentLevel = value;
             linkUiText = value.ToString(); //вместо value поставить UI
         }
     }
 
+    int g = 1;
     public void LevelStart()
     {
-        if (saveData.currentLevel % 5 == 0)
+
+        if (g % 5 == 0)
         {
-            bossFight.BossLevelStart(); //ссылка
+            bossFight.BossLevelStart();
         }
         else
         {
-            regularLevel.RegularLevelStart(); //ссылка
+            regularLevel.RegularLevelStart();
         }
     }
 
