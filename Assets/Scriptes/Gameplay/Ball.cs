@@ -4,7 +4,6 @@ using TMPro;
 
 public class Ball : MonoBehaviour
 {
-
 	[HideInInspector] public Resource resource;
 
 	[SerializeField] protected Rigidbody2D rb;
@@ -23,7 +22,7 @@ public class Ball : MonoBehaviour
 
 	public void HpBall()
 	{
-		health = Random.Range(1, 5)/* * SaveData.link.currentLevel*/;
+		health = Random.Range(1, 5) * SaveData.link.currentLevel;
 	}
 
 
@@ -60,9 +59,9 @@ public class Ball : MonoBehaviour
 
 	void OnTriggerEnter2D(Collider2D other)
 	{
-		if (other.tag.Equals("character"))
+		if (other.tag.Equals("character")) //
 		{
-            Debug.Log("gameover");
+			Debug.Log("gameover");
 		}
 
 		if (other.tag.Equals("bullet"))
@@ -98,9 +97,12 @@ public class Ball : MonoBehaviour
 		if (health > 1)
 		{
 			health -= damage;
+			++BallSpawner.Instance.score;
+            BallSpawner.Instance.score = (SaveData.link.currentLevel * BallSpawner.Instance.score) * (3 / 2);
         }
 		else if (health >= 0)
 		{
+			BallSpawner.Instance.score += 50;
 			Die();
 		}
 		UpdateUI();
@@ -108,7 +110,7 @@ public class Ball : MonoBehaviour
 	virtual protected void Die()
 	{
 		Destroy(gameObject);
-    }
+	}
 	protected void UpdateUI()
 	{
 		textHealth.text = health.ToString();

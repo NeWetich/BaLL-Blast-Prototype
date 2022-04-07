@@ -19,11 +19,10 @@ public class Level : MonoBehaviour
         }
     }
 
-    int g = 1;
     public void LevelStart()
     {
 
-        if (g % 5 == 0)
+        if (currentLevel % 5 == 0)
         {
             bossFight.BossLevelStart();
         }

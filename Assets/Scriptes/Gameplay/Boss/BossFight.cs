@@ -54,7 +54,7 @@ public class BossFight : MonoBehaviour
     }
     public void HpChange()
     {
-        health = 500 /** SaveData.link.currentLevel*/;
+        health = 500 * SaveData.link.currentLevel;
     }
     public void BossBevaivor()
     {

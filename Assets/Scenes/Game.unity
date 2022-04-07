@@ -2658,6 +2658,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ballsCount: 5
+  correntballCount: 5
+  ballCountonScene: 5
+  score: 0
   ballPrefabs:
   - {fileID: 456879170870599659, guid: 23d0e70821436c74dadae1cb15fd499b, type: 3}
   - {fileID: 2952878928390790970, guid: 7367e2ccd7f73fd43a8ab8f879f1da21, type: 3}
@@ -7397,7 +7400,6 @@ MonoBehaviour:
   linkScrollbar: {fileID: 1506582395}
   levelComplete: {fileID: 594345214}
   maxBallCount: 5
-  layoutBallSpawner: {fileID: 609506645}
   textScore: {fileID: 1677496583}
 --- !u!4 &1634802198
 Transform:

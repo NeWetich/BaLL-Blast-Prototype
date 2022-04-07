@@ -18,7 +18,7 @@ public class LevelComplete : MonoBehaviour
     public void LevelVictory()
     {
         layoutLevelComplete.gameObject.SetActive(true);
-        //++SaveData.link.currentLevel;
+        ++SaveData.link.currentLevel;
         layoutCharacterActive.gameObject.SetActive(false);
         layoutCharacterMenu.gameObject.SetActive(true);
         BackMenu();

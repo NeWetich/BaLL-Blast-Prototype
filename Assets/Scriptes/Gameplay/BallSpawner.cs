@@ -5,11 +5,13 @@ public class BallSpawner : MonoBehaviour
 {
 	public int ballsCount = 5;
 	[HideInInspector] float spawnDelay = 4;
+	public int correntballCount;
+	public int ballCountonScene;
+	public int score = 0;
 
 	[SerializeField] GameObject[] ballPrefabs;
-	
-	GameObject[] balls;
 
+	GameObject[] balls;
 
 	#region Singleton class: BallSpawner
 
@@ -22,8 +24,7 @@ public class BallSpawner : MonoBehaviour
 
     #endregion
 
-
-    public void BallSpawnerStart()
+	public void BallSpawnerStart()
     {
         PrepareBalls();
 		StartCoroutine(SpawnBalls());
@@ -34,6 +35,8 @@ public class BallSpawner : MonoBehaviour
 		for (int i = 0; i < ballsCount; i++)
 		{
 			balls[i].SetActive(true);
+			--correntballCount;
+			++ballCountonScene;
 			yield return new WaitForSeconds(spawnDelay);
 		}
 	}

@@ -141,9 +141,9 @@ MonoBehaviour:
   rb: {fileID: 2952878928390790974}
   health: 0
   textHealth: {fileID: 2952878930355408648}
-  textScore: {fileID: 0}
   jumpForce: 8
   gameOver: {fileID: 0}
+  regular: {fileID: 0}
   isResultOfFission: 1
   splitsPrefabs:
   - {fileID: 456879170870599659, guid: 23d0e70821436c74dadae1cb15fd499b, type: 3}
@@ -160,6 +160,7 @@ GameObject:
   - component: {fileID: 2952878930355408649}
   - component: {fileID: 2952878930355408648}
   - component: {fileID: 2952878930355408651}
+  - component: {fileID: 2874160380883548314}
   m_Layer: 0
   m_Name: Number
   m_TagString: Untagged
@@ -332,3 +333,23 @@ SortingGroup:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
+--- !u!114 &2874160380883548314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2952878930355408645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55293e3c3a43b21489d632bed2142f99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameOver: {fileID: 0}
+  resource: {fileID: 0}
+  ballSpawner: {fileID: 0}
+  linkScrollbar: {fileID: 0}
+  levelComplete: {fileID: 0}
+  maxBallCount: 5
+  ballC: 1
+  textScore: {fileID: 0}

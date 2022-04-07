@@ -12,6 +12,15 @@ public class SaveLoad : MonoBehaviour
     public static void OnBeforeSceneLoadRuntimeMethod()
     {
         SaveController.Load<SaveData>();
+        var result = SaveController.Load<SaveData>();
+        if (result != null)
+        {
+            SaveData.link = result;
+        }
+        else
+        {
+            SaveData.link = new SaveData();
+        }
     }
 }
 

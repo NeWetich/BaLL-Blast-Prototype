@@ -15,17 +15,24 @@ public class RegularLevel : MonoBehaviour
 
     public TMP_Text textScore;
 
-    private int score = 0;
+
     public void RegularLevelStart()
     {
         ballSpawner.BallSpawnerStart();
+        UpdateUI();
         LevelBarChange();
-        if (ballSpawner.ballsCount == 0)
+        CheckOnVictory();
+    }
+    public void CheckOnVictory()
+    {
+        if (ballSpawner.correntballCount == 0)
         {
-            levelComplete.LevelVictory();
+            if (ballSpawner.ballCountonScene == 0)
+            {
+                levelComplete.LevelVictory();
+            }
         }
     }
-
     void Failed()//условие проигрыша
     {
         gameOver.LevelFailed();
@@ -34,15 +41,9 @@ public class RegularLevel : MonoBehaviour
     {
         resource.TakeResources();
     }
-
-    void ScoreChange()//условие получения урона
-    {
-        ++score;
-        score = (/*SaveData.link.currentLevel * */score) * (3 / 2);
-    }
     protected void UpdateUI()
     {
-        textScore.text = score.ToString();
+        textScore.text = BallSpawner.Instance.score.ToString();
     }
     public void LevelBarChange()
     {
